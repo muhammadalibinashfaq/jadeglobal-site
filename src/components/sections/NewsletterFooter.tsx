@@ -15,13 +15,6 @@ const quickLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
-const otherLinks = [
-  { label: 'Careers', href: '#' },
-  { label: 'Partners', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms & Conditions', href: '#' },
-]
-
 export default function NewsletterFooter() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -209,7 +202,7 @@ export default function NewsletterFooter() {
       {/* Footer */}
       <div className="border-t border-white/[0.03]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-20 sm:py-24">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-8">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-4 mb-8">
@@ -222,7 +215,7 @@ export default function NewsletterFooter() {
                     Jade
                   </span>
                   <span className="text-[8px] font-medium tracking-[0.35em] uppercase text-white/35">
-                    Global.site
+                    Global .site
                   </span>
                 </div>
               </div>
@@ -251,25 +244,6 @@ export default function NewsletterFooter() {
               </ul>
             </div>
 
-            {/* Company */}
-            <div>
-              <h4 className="text-[9px] font-medium text-white/40 mb-6 uppercase tracking-[0.3em]">
-                Company
-              </h4>
-              <ul className="space-y-4">
-                {otherLinks.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-white/30 hover:text-white/55 transition-colors duration-300 font-light"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* Contact */}
             <div>
               <h4 className="text-[9px] font-medium text-white/40 mb-6 uppercase tracking-[0.3em]">
@@ -277,20 +251,18 @@ export default function NewsletterFooter() {
               </h4>
               <div className="space-y-4 text-sm text-white/30 font-light leading-[1.7]">
                 <p>
-                  1731 Technology Drive,
+                  1500 N Grant ST # 7997
                   <br />
-                  Suite 350, San Jose,
-                  <br />
-                  CA 95110
+                  Denver, CO 80203
                 </p>
                 <p>
-                  <a href="tel:+18008997200" className="hover:text-white/55 transition-colors duration-300">
-                    +1 800-899-7200
+                  <a href="tel:+13503535005" className="hover:text-white/55 transition-colors duration-300">
+                    +1 350 353 5005
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:info@jadeglobal.site" className="hover:text-white/55 transition-colors duration-300">
-                    info@jadeglobal.site
+                  <a href="mailto:connect@antrosys.com" className="hover:text-white/55 transition-colors duration-300">
+                    connect@antrosys.com
                   </a>
                 </p>
                 <p className="pt-4">
@@ -314,10 +286,10 @@ export default function NewsletterFooter() {
       <div className="border-t border-white/[0.03]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-[9px] text-white/20 font-light tracking-[0.15em] font-[family-name:var(--font-space-mono)]">
-            &copy; 2026 JADE GLOBAL.SITE. ALL RIGHTS RESERVED.
+            &copy; 2026 JADE GLOBAL .SITE. ALL RIGHTS RESERVED.
           </p>
           <p className="text-[9px] text-white/20 font-light tracking-[0.15em]">
-            San Jose &middot; Philadelphia &middot; Dallas &middot; Pune &middot; London
+            Denver &middot; San Jose &middot; Philadelphia &middot; Pune &middot; London
           </p>
         </div>
       </div>

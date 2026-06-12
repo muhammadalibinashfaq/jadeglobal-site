@@ -10,8 +10,8 @@ import {
 
 const faqs = [
   {
-    question: 'What services does Jade Global.site offer?',
-    answer: 'Jade Global.site provides comprehensive IT consulting, integration, and managed services including Cloud Transformation, ERP & CRM Modernization, Data & Analytics, AI & Intelligent Automation, Integration, Testing, and Managed Services. We are a certified partner with Salesforce, Oracle, NetSuite, Snowflake, Boomi, AWS, and Azure.',
+    question: 'What services does Jade Global .site offer?',
+    answer: 'Jade Global .site provides comprehensive IT consulting, integration, and managed services including Cloud Transformation, ERP & CRM Modernization, Data & Analytics, AI & Intelligent Automation, Integration, Testing, and Managed Services. We are a certified partner with Salesforce, Oracle, NetSuite, Snowflake, Boomi, AWS, and Azure.',
   },
   {
     question: 'What industries do you serve?',
@@ -22,7 +22,7 @@ const faqs = [
     answer: 'We are certified experts across 20+ enterprise platforms including Salesforce (Summit Partner), Oracle (Premier Partner), NetSuite, Snowflake, Boomi, AWS, Azure, Google Cloud, and more. Our multi-platform expertise ensures vendor-agnostic recommendations for your specific needs.',
   },
   {
-    question: 'How does Jade Global.site ensure project success?',
+    question: 'How does Jade Global .site ensure project success?',
     answer: 'We follow a proven methodology: Discovery, Analysis, Implementation, and Optimization. Our agile frameworks, certified professionals, real-time dashboards, and detailed reporting ensure complete visibility and accountability throughout every engagement. We maintain a 95% client retention rate.',
   },
   {
@@ -30,7 +30,7 @@ const faqs = [
     answer: 'Yes, we provide comprehensive managed services including 24/7 monitoring, incident management, performance optimization, and ongoing support. Our SLA guarantees less than 2-hour response times with 99.9% system uptime across all managed engagements.',
   },
   {
-    question: "What is Jade Global.site's delivery model?",
+    question: "What is Jade Global .site's delivery model?",
     answer: 'We offer flexible delivery models including on-site, offshore, and hybrid approaches from our 13 offices across North America, UK, and Asia. With 2000+ employees, we can scale teams rapidly while maintaining quality through our proven frameworks and certified professionals.',
   },
 ]

@@ -5,7 +5,7 @@ import { Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: 'Jade Global.site transformed our entire ERP landscape in half the expected timeline. Their Oracle expertise is unmatched in the industry.',
+    quote: 'Jade Global .site transformed our entire ERP landscape in half the expected timeline. Their Oracle expertise is unmatched in the industry.',
     name: 'Sarah Mitchell',
     title: 'CTO',
     company: 'Vertex Technologies',
@@ -23,7 +23,7 @@ const testimonials = [
     company: 'Apex Financial',
   },
   {
-    quote: 'From cloud migration to AI integration, Jade Global.site has been our single trusted partner for all digital transformation initiatives.',
+    quote: 'From cloud migration to AI integration, Jade Global .site has been our single trusted partner for all digital transformation initiatives.',
     name: 'Michael Torres',
     title: 'CIO',
     company: 'Quantum Manufacturing',
