@@ -23,8 +23,6 @@ const otherLinks = [
 ]
 
 export default function NewsletterFooter() {
-  const [email, setEmail] = useState('')
-  const [subscribed, setSubscribed] = useState(false)
   const [formData, setFormData] = useState({
     fullName: '',
     emailAddress: '',
@@ -34,14 +32,6 @@ export default function NewsletterFooter() {
     message: '',
   })
   const [formSubmitted, setFormSubmitted] = useState(false)
-
-  const handleSubscribe = () => {
-    if (email.trim() && email.includes('@')) {
-      setSubscribed(true)
-      setEmail('')
-      setTimeout(() => setSubscribed(false), 3000)
-    }
-  }
 
   const handleFormChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
@@ -65,67 +55,163 @@ export default function NewsletterFooter() {
 
   return (
     <footer id="contact" className="relative bg-black">
-      {/* Newsletter CTA */}
+      {/* Contact Form Section — replacing newsletter */}
       <div className="relative py-32 sm:py-44 overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.005] rounded-full blur-[200px]" />
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
         <div className="relative max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl mx-auto text-center"
-          >
-            <div className="flex items-center justify-center gap-5 mb-8">
-              <div className="w-8 h-[1px] bg-gradient-to-r from-transparent to-white/30" />
-              <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/50 font-[family-name:var(--font-space-mono)]">
-                Newsletter
-              </span>
-              <div className="w-8 h-[1px] bg-gradient-to-l from-transparent to-white/30" />
-            </div>
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            {/* Left side — heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-5 mb-8">
+                <div className="w-8 h-[1px] bg-gradient-to-r from-white/30 to-transparent" />
+                <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/50 font-[family-name:var(--font-space-mono)]">
+                  Get in Touch
+                </span>
+              </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extralight tracking-ultra-tight leading-[0.95] mb-6">
-              Stay ahead in
-              <br />
-              <span className="gradient-text">transformation</span>
-            </h2>
-            <p className="text-white/40 text-sm mb-12 font-light leading-[1.8]">
-              Get the latest insights, case studies, and industry updates delivered to your inbox.
-            </p>
-            <div className="flex gap-0 max-w-md mx-auto">
-              <Input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSubscribe()}
-                placeholder="Enter your email"
-                className="flex-1 bg-transparent border border-white/[0.06] border-r-0 text-white/70 placeholder:text-white/20 rounded-none h-12 font-light text-sm focus:ring-0 focus:border-white/15 transition-colors duration-300"
-              />
-              <Button
-                onClick={handleSubscribe}
-                className="btn-shine bg-white text-black font-medium rounded-none h-12 px-8 text-[12px] tracking-[0.15em] uppercase hover:bg-white/90 transition-all duration-500 border border-white"
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight tracking-ultra-tight leading-[0.95] mb-6">
+                Let&apos;s start
+                <br />
+                <span className="gradient-text">something new</span>
+              </h2>
+              <p className="text-white/45 text-sm leading-[1.8] font-light max-w-md mb-10">
+                Ready to transform your business? Reach out and our team of certified consultants will craft a tailored solution for your digital transformation needs.
+              </p>
+
+              <a
+                href="https://Cal.com/Antrosys"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-white text-black font-medium rounded-lg px-8 h-12 text-[12px] tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-500"
               >
-                {subscribed ? 'Subscribed' : (
-                  <>
-                    Subscribe
-                    <ArrowRight className="ml-2 size-3.5" />
-                  </>
-                )}
+                Book a Meeting
+                <ArrowRight className="size-3.5" />
+              </a>
+            </motion.div>
+
+            {/* Right side — contact form */}
+            <motion.form
+              onSubmit={handleFormSubmit}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="space-y-5"
+            >
+              {/* Full Name */}
+              <div>
+                <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Full Name</label>
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                  <Input
+                    value={formData.fullName}
+                    onChange={(e) => handleFormChange('fullName', e.target.value)}
+                    placeholder="John Doe"
+                    className="bg-white/[0.04] border border-white/[0.08] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/20 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+
+              {/* Email Address */}
+              <div>
+                <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Email Address</label>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                  <Input
+                    type="email"
+                    value={formData.emailAddress}
+                    onChange={(e) => handleFormChange('emailAddress', e.target.value)}
+                    placeholder="john@example.com"
+                    className="bg-white/[0.04] border border-white/[0.08] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/20 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+
+              {/* Phone Number */}
+              <div>
+                <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Phone Number</label>
+                <div className="relative">
+                  <Phone className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                  <Input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleFormChange('phone', e.target.value)}
+                    placeholder="+1 (555) 123-4567"
+                    className="bg-white/[0.04] border border-white/[0.08] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/20 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+
+              {/* Company Name */}
+              <div>
+                <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Company Name</label>
+                <div className="relative">
+                  <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                  <Input
+                    value={formData.company}
+                    onChange={(e) => handleFormChange('company', e.target.value)}
+                    placeholder="Antrosys"
+                    className="bg-white/[0.04] border border-white/[0.08] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/20 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+
+              {/* Website URL */}
+              <div>
+                <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Website URL</label>
+                <div className="relative">
+                  <Globe className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                  <Input
+                    type="url"
+                    value={formData.website}
+                    onChange={(e) => handleFormChange('website', e.target.value)}
+                    placeholder="https://example.com"
+                    className="bg-white/[0.04] border border-white/[0.08] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/20 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Message</label>
+                <div className="relative">
+                  <MessageSquare className="absolute left-3 top-3 size-4 text-white/25" />
+                  <textarea
+                    value={formData.message}
+                    onChange={(e) => handleFormChange('message', e.target.value)}
+                    placeholder="I need an amazing Web / UI/UX Design / Brand identity..."
+                    rows={4}
+                    className="w-full bg-white/[0.04] border border-white/[0.08] text-white/80 placeholder:text-white/20 rounded-lg font-light text-sm pl-10 pr-4 py-3 focus:ring-0 focus:border-white/20 transition-colors duration-300 resize-none"
+                  />
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                className="w-full bg-white text-black font-semibold rounded-lg h-12 text-[13px] tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-500 mt-2"
+              >
+                {formSubmitted ? 'Message Sent!' : 'Submit'}
               </Button>
-            </div>
-          </motion.div>
+            </motion.form>
+          </div>
         </div>
       </div>
 
       {/* Footer */}
       <div className="border-t border-white/[0.03]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-20 sm:py-24">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-16 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8">
             {/* Brand */}
-            <div className="sm:col-span-2 lg:col-span-2">
+            <div>
               <div className="flex items-center gap-4 mb-8">
                 <div className="relative w-8 h-8 overflow-hidden">
                   <div className="absolute inset-0 border border-white/15 rotate-45 scale-75" />
@@ -133,122 +219,16 @@ export default function NewsletterFooter() {
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-[14px] font-light tracking-[0.25em] uppercase text-white/60">
-                    jadeglobal
+                    Jade
                   </span>
                   <span className="text-[8px] font-medium tracking-[0.35em] uppercase text-white/35">
-                    .site
+                    Global.site
                   </span>
                 </div>
               </div>
-              <p className="text-sm text-white/30 leading-[1.8] mb-10 font-light max-w-xs">
+              <p className="text-sm text-white/30 leading-[1.8] font-light max-w-xs">
                 Your Trusted Partner for Digital Transformation. Premier IT consulting, integration, and managed services since 2003.
               </p>
-
-              {/* Contact Form replacing social icons */}
-              <motion.form
-                onSubmit={handleFormSubmit}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-4"
-              >
-                {/* Full Name */}
-                <div>
-                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Full Name</label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
-                    <Input
-                      value={formData.fullName}
-                      onChange={(e) => handleFormChange('fullName', e.target.value)}
-                      placeholder="John Doe"
-                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
-                    />
-                  </div>
-                </div>
-
-                {/* Email Address */}
-                <div>
-                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Email Address</label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
-                    <Input
-                      type="email"
-                      value={formData.emailAddress}
-                      onChange={(e) => handleFormChange('emailAddress', e.target.value)}
-                      placeholder="john@example.com"
-                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
-                    />
-                  </div>
-                </div>
-
-                {/* Phone Number */}
-                <div>
-                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Phone Number</label>
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
-                    <Input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleFormChange('phone', e.target.value)}
-                      placeholder="+1 (555) 123-4567"
-                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
-                    />
-                  </div>
-                </div>
-
-                {/* Company Name */}
-                <div>
-                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Company Name</label>
-                  <div className="relative">
-                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
-                    <Input
-                      value={formData.company}
-                      onChange={(e) => handleFormChange('company', e.target.value)}
-                      placeholder="Antrosys"
-                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
-                    />
-                  </div>
-                </div>
-
-                {/* Website URL */}
-                <div>
-                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Website URL</label>
-                  <div className="relative">
-                    <Globe className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
-                    <Input
-                      type="url"
-                      value={formData.website}
-                      onChange={(e) => handleFormChange('website', e.target.value)}
-                      placeholder="https://example.com"
-                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
-                    />
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Message</label>
-                  <div className="relative">
-                    <MessageSquare className="absolute left-3 top-3 size-4 text-white/25" />
-                    <textarea
-                      value={formData.message}
-                      onChange={(e) => handleFormChange('message', e.target.value)}
-                      placeholder="I need an amazing Web / UI/UX Design / Brand identity..."
-                      rows={4}
-                      className="w-full bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg font-light text-sm pl-10 pr-4 py-3 focus:ring-0 focus:border-white/15 transition-colors duration-300 resize-none"
-                    />
-                  </div>
-                </div>
-
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  className="w-full bg-white text-black font-semibold rounded-lg h-12 text-[13px] tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-500 mt-2"
-                >
-                  {formSubmitted ? 'Message Sent!' : 'Submit'}
-                </Button>
-              </motion.form>
             </div>
 
             {/* Quick Links */}
@@ -290,7 +270,7 @@ export default function NewsletterFooter() {
               </ul>
             </div>
 
-            {/* Contact Info */}
+            {/* Contact */}
             <div>
               <h4 className="text-[9px] font-medium text-white/40 mb-6 uppercase tracking-[0.3em]">
                 Contact
@@ -334,7 +314,7 @@ export default function NewsletterFooter() {
       <div className="border-t border-white/[0.03]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-[9px] text-white/20 font-light tracking-[0.15em] font-[family-name:var(--font-space-mono)]">
-            &copy; 2026 JADEGLOBAL.SITE. ALL RIGHTS RESERVED.
+            &copy; 2026 JADE GLOBAL.SITE. ALL RIGHTS RESERVED.
           </p>
           <p className="text-[9px] text-white/20 font-light tracking-[0.15em]">
             San Jose &middot; Philadelphia &middot; Dallas &middot; Pune &middot; London

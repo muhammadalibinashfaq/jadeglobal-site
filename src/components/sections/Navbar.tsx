@@ -59,7 +59,7 @@ export default function Navbar() {
                   Jade
                 </span>
                 <span className="text-[9px] font-medium tracking-[0.35em] uppercase text-white/40">
-                  Global
+                  Global.site
                 </span>
               </div>
             </a>

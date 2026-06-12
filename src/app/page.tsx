@@ -4,7 +4,6 @@ import Navbar from '@/components/sections/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
-import DemoSection from '@/components/sections/DemoSection'
 import MetricsSection from '@/components/sections/MetricsSection'
 import WhyChooseSection from '@/components/sections/WhyChooseSection'
 import ProcessSection from '@/components/sections/ProcessSection'
@@ -21,7 +20,6 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <ProjectsSection />
-        <DemoSection />
         <MetricsSection />
         <WhyChooseSection />
         <ProcessSection />
