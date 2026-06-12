@@ -58,7 +58,7 @@ export default function Navbar() {
                 <span className="text-[15px] font-light tracking-[0.25em] uppercase text-white/90">
                   Jade
                 </span>
-                <span className="text-[9px] font-medium tracking-[0.35em] uppercase text-white/25">
+                <span className="text-[9px] font-medium tracking-[0.35em] uppercase text-white/40">
                   Global
                 </span>
               </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
-                  className="relative px-5 py-2 text-[12px] tracking-[0.12em] uppercase text-white/30 hover:text-white transition-all duration-500 font-light group"
+                  className="relative px-5 py-2 text-[12px] tracking-[0.12em] uppercase text-white/50 hover:text-white transition-all duration-500 font-light group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-white/40 group-hover:w-full transition-all duration-500" />
@@ -119,7 +119,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="text-4xl font-extralight text-white/40 hover:text-white transition-colors duration-300 py-4 tracking-tight"
+                  className="text-4xl font-extralight text-white/55 hover:text-white transition-colors duration-300 py-4 tracking-tight"
                 >
                   <span className="text-white/10 text-sm font-mono mr-4">0{i + 1}</span>
                   {link.label}

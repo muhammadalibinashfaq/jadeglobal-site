@@ -52,7 +52,7 @@ export default function ServicesSection() {
           >
             <div className="flex items-center gap-5 mb-8">
               <div className="w-8 h-[1px] bg-gradient-to-r from-white/30 to-transparent" />
-              <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/25 font-[family-name:var(--font-space-mono)]">
+              <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/50 font-[family-name:var(--font-space-mono)]">
                 Services
               </span>
             </div>
@@ -70,7 +70,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="flex items-end"
           >
-            <p className="text-white/20 text-base leading-[1.9] font-light max-w-md">
+            <p className="text-white/45 text-base leading-[1.9] font-light max-w-md">
               End-to-end consulting, implementation, and managed services across the enterprise
               technology landscape. Certified partnerships with the world&apos;s leading platforms
               ensure vendor-agnostic solutions built for your specific needs.
@@ -104,20 +104,20 @@ export default function ServicesSection() {
                   {/* Number + Icon row */}
                   <div className="flex items-start justify-between mb-10">
                     <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-[family-name:var(--font-space-mono)] font-bold text-white/[0.06] group-hover:text-white/[0.12] transition-colors duration-500">
+                      <span className="text-[10px] font-[family-name:var(--font-space-mono)] font-bold text-white/20 group-hover:text-white/35 transition-colors duration-500">
                         {service.number}
                       </span>
                       <div className="w-12 h-12 border border-white/[0.06] flex items-center justify-center group-hover:border-white/15 group-hover:bg-white/[0.02] transition-all duration-500">
-                        <Icon className="size-5 text-white/20 group-hover:text-white/50 transition-colors duration-500" />
+                        <Icon className="size-5 text-white/35 group-hover:text-white/60 transition-colors duration-500" />
                       </div>
                     </div>
                     <ArrowUpRight className="size-5 text-white/0 group-hover:text-white/20 transition-all duration-700 -translate-x-3 translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0" />
                   </div>
 
-                  <h3 className="text-2xl font-light text-white/60 mb-5 tracking-tight group-hover:text-white transition-colors duration-500">
+                  <h3 className="text-2xl font-light text-white/75 mb-5 tracking-tight group-hover:text-white transition-colors duration-500">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-white/18 leading-[1.8] mb-8 group-hover:text-white/35 transition-colors duration-500 font-light">
+                  <p className="text-sm text-white/45 leading-[1.8] mb-8 group-hover:text-white/65 transition-colors duration-500 font-light">
                     {service.description}
                   </p>
 
@@ -125,7 +125,7 @@ export default function ServicesSection() {
                     {service.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[9px] uppercase tracking-[0.2em] text-white/10 border border-white/[0.04] px-3 py-1.5 font-medium group-hover:text-white/25 group-hover:border-white/[0.08] transition-all duration-500"
+                        className="text-[9px] uppercase tracking-[0.2em] text-white/30 border border-white/[0.04] px-3 py-1.5 font-medium group-hover:text-white/50 group-hover:border-white/[0.08] transition-all duration-500"
                       >
                         {tag}
                       </span>

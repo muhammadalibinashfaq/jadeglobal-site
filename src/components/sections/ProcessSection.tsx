@@ -85,23 +85,23 @@ export default function ProcessSection() {
                   <div className="pt-2 lg:pt-0">
                     {/* Step label */}
                     <div className="flex items-center gap-3 mb-6">
-                      <span className="text-[9px] font-[family-name:var(--font-space-mono)] font-bold text-white/8 tracking-[0.3em] group-hover:text-white/15 transition-colors duration-500">
+                      <span className="text-[9px] font-[family-name:var(--font-space-mono)] font-bold text-white/20 group-hover:text-white/35 transition-colors duration-500">
                         STEP {step.step}
                       </span>
                     </div>
 
                     {/* Icon */}
                     <div className="w-14 h-14 border border-white/[0.04] flex items-center justify-center mb-7 group-hover:border-white/[0.1] group-hover:bg-white/[0.015] transition-all duration-700">
-                      <Icon className="size-5 text-white/10 group-hover:text-white/30 transition-colors duration-500" />
+                      <Icon className="size-5 text-white/25 group-hover:text-white/50 transition-colors duration-500" />
                     </div>
 
-                    <h3 className="text-lg font-light text-white/50 mb-4 tracking-[0.08em] uppercase group-hover:text-white transition-colors duration-500 text-[13px]">
+                    <h3 className="text-lg font-light text-white/60 mb-4 tracking-[0.08em] uppercase group-hover:text-white transition-colors duration-500 text-[13px]">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-white/15 leading-[1.8] font-light mb-4 group-hover:text-white/30 transition-colors duration-500">
+                    <p className="text-sm text-white/35 leading-[1.8] font-light mb-4 group-hover:text-white/55 transition-colors duration-500">
                       {step.description}
                     </p>
-                    <p className="text-[10px] text-white/8 font-light tracking-[0.1em] font-[family-name:var(--font-space-mono)]">
+                    <p className="text-[10px] text-white/25 font-light tracking-[0.1em] font-[family-name:var(--font-space-mono)]">
                       {step.detail}
                     </p>
                   </div>

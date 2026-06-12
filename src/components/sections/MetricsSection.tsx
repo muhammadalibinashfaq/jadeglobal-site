@@ -88,7 +88,7 @@ export default function MetricsSection() {
 
               <div className="relative z-10">
                 <AnimatedCounter value={metric.value} suffix={metric.suffix} prefix={metric.prefix} />
-                <p className="mt-4 text-[10px] text-white/15 font-medium uppercase tracking-[0.25em]">
+                <p className="mt-4 text-[10px] text-white/40 font-medium uppercase tracking-[0.25em]">
                   {metric.label}
                 </p>
               </div>

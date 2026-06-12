@@ -74,7 +74,7 @@ export default function FAQSection() {
                 value={`item-${index}`}
                 className="border-b border-white/[0.03] bg-transparent px-0 data-[state=open]:bg-transparent transition-all duration-300"
               >
-                <AccordionTrigger className="text-left text-white/30 hover:no-underline hover:text-white/60 transition-colors duration-500 py-7 text-sm font-light tracking-wide">
+                <AccordionTrigger className="text-left text-white/50 hover:no-underline hover:text-white/75 transition-colors duration-500 py-7 text-sm font-light tracking-wide">
                   <span className="flex items-center gap-5">
                     <span className="text-white/[0.06] text-[10px] font-[family-name:var(--font-space-mono)] min-w-[22px]">
                       {String(index + 1).padStart(2, '0')}
@@ -82,7 +82,7 @@ export default function FAQSection() {
                     {faq.question}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-white/15 text-sm leading-[1.9] pb-7 font-light pl-9">
+                <AccordionContent className="text-white/40 text-sm leading-[1.9] pb-7 font-light pl-9">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

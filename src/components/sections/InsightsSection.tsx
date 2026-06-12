@@ -96,27 +96,27 @@ export default function InsightsSection() {
 
                 {/* Category */}
                 <div className="absolute top-6 left-6">
-                  <span className="text-[9px] uppercase tracking-[0.25em] text-white/20 font-medium bg-black/50 backdrop-blur-xl px-3 py-1.5 border border-white/[0.04]">
+                  <span className="text-[9px] uppercase tracking-[0.25em] text-white/40 font-medium bg-black/50 backdrop-blur-xl px-3 py-1.5 border border-white/[0.04]">
                     {article.category}
                   </span>
                 </div>
               </div>
 
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-[9px] text-white/15 font-medium tracking-[0.2em] uppercase font-[family-name:var(--font-space-mono)]">
+                <span className="text-[9px] text-white/35 font-medium tracking-[0.2em] uppercase font-[family-name:var(--font-space-mono)]">
                   {article.date}
                 </span>
                 <div className="h-[1px] w-4 bg-white/[0.06]" />
-                <span className="text-[9px] text-white/10 font-medium tracking-[0.2em] uppercase font-[family-name:var(--font-space-mono)]">
+                <span className="text-[9px] text-white/25 font-medium tracking-[0.2em] uppercase font-[family-name:var(--font-space-mono)]">
                   {article.readTime}
                 </span>
               </div>
 
-              <h3 className="text-lg font-light text-white/40 leading-[1.5] group-hover:text-white/80 transition-colors duration-500 mb-3">
+              <h3 className="text-lg font-light text-white/55 leading-[1.5] group-hover:text-white/85 transition-colors duration-500 mb-3">
                 {article.title}
               </h3>
 
-              <p className="text-sm text-white/12 font-light leading-[1.7] group-hover:text-white/25 transition-colors duration-500">
+              <p className="text-sm text-white/30 font-light leading-[1.7] group-hover:text-white/50 transition-colors duration-500">
                 {article.excerpt}
               </p>
             </motion.div>

@@ -71,18 +71,18 @@ export default function TestimonialsSection() {
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/0 group-hover:bg-white/10 transition-all duration-700" />
 
               <Quote className="size-6 text-white/[0.03] mb-8" />
-              <p className="text-white/20 leading-[1.9] mb-10 text-[15px] font-light group-hover:text-white/40 transition-colors duration-700">
+              <p className="text-white/40 leading-[1.9] mb-10 text-[15px] font-light group-hover:text-white/60 transition-colors duration-700">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="flex items-center gap-5">
-                <div className="w-11 h-11 border border-white/[0.05] flex items-center justify-center text-white/15 text-[11px] font-[family-name:var(--font-space-mono)] font-bold group-hover:border-white/[0.1] group-hover:text-white/25 transition-all duration-500">
+                <div className="w-11 h-11 border border-white/[0.05] flex items-center justify-center text-white/15 text-[11px] font-[family-name:var(--font-space-mono)] font-bold group-hover:border-white/[0.1] group-hover:text-white/40 transition-all duration-500">
                   {testimonial.name.split(' ').map((n) => n[0]).join('')}
                 </div>
                 <div>
                   <p className="text-sm font-light text-white/40 group-hover:text-white/70 transition-colors duration-500">
                     {testimonial.name}
                   </p>
-                  <p className="text-[10px] text-white/12 font-light tracking-[0.05em]">
+                  <p className="text-[10px] text-white/35 font-light tracking-[0.05em]">
                     {testimonial.title}, {testimonial.company}
                   </p>
                 </div>

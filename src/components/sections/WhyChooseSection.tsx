@@ -76,10 +76,10 @@ export default function WhyChooseSection() {
                 {/* Title + Icon */}
                 <div className="flex items-start gap-6">
                   <div className="w-12 h-12 border border-white/[0.05] flex items-center justify-center flex-shrink-0 group-hover:border-white/15 group-hover:bg-white/[0.02] transition-all duration-700 mt-1">
-                    <Icon className="size-5 text-white/15 group-hover:text-white/40 transition-colors duration-500" />
+                    <Icon className="size-5 text-white/30 group-hover:text-white/50 transition-colors duration-500" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-light text-white/50 group-hover:text-white transition-colors duration-500 tracking-tight">
+                    <h3 className="text-2xl font-light text-white/65 group-hover:text-white transition-colors duration-500 tracking-tight">
                       {value.title}
                     </h3>
                   </div>
@@ -87,7 +87,7 @@ export default function WhyChooseSection() {
 
                 {/* Description */}
                 <div className="flex items-center">
-                  <p className="text-sm text-white/15 leading-[1.8] font-light group-hover:text-white/35 transition-colors duration-500">
+                  <p className="text-sm text-white/35 leading-[1.8] font-light group-hover:text-white/55 transition-colors duration-500">
                     {value.description}
                   </p>
                 </div>

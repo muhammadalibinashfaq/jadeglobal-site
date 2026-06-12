@@ -77,7 +77,7 @@ export default function NewsletterFooter() {
               <br />
               <span className="gradient-text">transformation</span>
             </h2>
-            <p className="text-white/15 text-sm mb-12 font-light leading-[1.8]">
+            <p className="text-white/40 text-sm mb-12 font-light leading-[1.8]">
               Get the latest insights, case studies, and industry updates delivered to your inbox.
             </p>
             <div className="flex gap-0 max-w-md mx-auto">
@@ -120,12 +120,12 @@ export default function NewsletterFooter() {
                   <span className="text-[14px] font-light tracking-[0.25em] uppercase text-white/60">
                     Jade
                   </span>
-                  <span className="text-[8px] font-medium tracking-[0.35em] uppercase text-white/15">
+                  <span className="text-[8px] font-medium tracking-[0.35em] uppercase text-white/35">
                     Global
                   </span>
                 </div>
               </div>
-              <p className="text-sm text-white/10 leading-[1.8] mb-10 font-light max-w-xs">
+              <p className="text-sm text-white/30 leading-[1.8] mb-10 font-light max-w-xs">
                 Your Trusted Partner for Digital Transformation. Premier IT consulting, integration, and managed services since 2003.
               </p>
               <div className="flex gap-2">
@@ -136,7 +136,7 @@ export default function NewsletterFooter() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="w-9 h-9 border border-white/[0.04] flex items-center justify-center text-white/10 hover:text-white/40 hover:border-white/[0.1] transition-all duration-500"
+                      className="w-9 h-9 border border-white/[0.04] flex items-center justify-center text-white/25 hover:text-white/50 hover:border-white/[0.1] transition-all duration-500"
                     >
                       <Icon className="size-3.5" />
                     </a>
@@ -147,7 +147,7 @@ export default function NewsletterFooter() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-[9px] font-medium text-white/20 mb-6 uppercase tracking-[0.3em]">
+              <h4 className="text-[9px] font-medium text-white/40 mb-6 uppercase tracking-[0.3em]">
                 Quick Links
               </h4>
               <ul className="space-y-4">
@@ -156,7 +156,7 @@ export default function NewsletterFooter() {
                     <a
                       href={link.href}
                       onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
-                      className="text-sm text-white/10 hover:text-white/35 transition-colors duration-300 font-light"
+                      className="text-sm text-white/30 hover:text-white/55 transition-colors duration-300 font-light"
                     >
                       {link.label}
                     </a>
@@ -167,7 +167,7 @@ export default function NewsletterFooter() {
 
             {/* Company */}
             <div>
-              <h4 className="text-[9px] font-medium text-white/20 mb-6 uppercase tracking-[0.3em]">
+              <h4 className="text-[9px] font-medium text-white/40 mb-6 uppercase tracking-[0.3em]">
                 Company
               </h4>
               <ul className="space-y-4">
@@ -175,7 +175,7 @@ export default function NewsletterFooter() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-white/10 hover:text-white/35 transition-colors duration-300 font-light"
+                      className="text-sm text-white/30 hover:text-white/55 transition-colors duration-300 font-light"
                     >
                       {link.label}
                     </a>
@@ -186,7 +186,7 @@ export default function NewsletterFooter() {
 
             {/* Contact */}
             <div>
-              <h4 className="text-[9px] font-medium text-white/20 mb-6 uppercase tracking-[0.3em]">
+              <h4 className="text-[9px] font-medium text-white/40 mb-6 uppercase tracking-[0.3em]">
                 Contact
               </h4>
               <div className="space-y-4 text-sm text-white/10 font-light leading-[1.7]">
@@ -216,10 +216,10 @@ export default function NewsletterFooter() {
       {/* Copyright */}
       <div className="border-t border-white/[0.03]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[9px] text-white/[0.06] font-light tracking-[0.15em] font-[family-name:var(--font-space-mono)]">
+          <p className="text-[9px] text-white/20 font-light tracking-[0.15em] font-[family-name:var(--font-space-mono)]">
             &copy; 2026 JADE GLOBAL. ALL RIGHTS RESERVED.
           </p>
-          <p className="text-[9px] text-white/[0.06] font-light tracking-[0.15em]">
+          <p className="text-[9px] text-white/20 font-light tracking-[0.15em]">
             San Jose &middot; Philadelphia &middot; Dallas &middot; Pune &middot; London
           </p>
         </div>

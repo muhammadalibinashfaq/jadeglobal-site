@@ -45,7 +45,7 @@ export default function HeroSection() {
               className="flex items-center gap-5 mb-10"
             >
               <div className="h-[1px] w-16 bg-gradient-to-r from-white/30 to-transparent" />
-              <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/30 font-[family-name:var(--font-space-mono)]">
+              <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/50 font-[family-name:var(--font-space-mono)]">
                 Digital Transformation Partner
               </span>
             </motion.div>
@@ -71,7 +71,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="mt-10 text-base sm:text-lg text-white/25 max-w-lg leading-[1.8] font-light"
+              className="mt-10 text-base sm:text-lg text-white/45 max-w-lg leading-[1.8] font-light"
             >
               Seamlessly connect your enterprise to the cloud, AI, and data intelligence.
               Two decades of consulting excellence across 400+ organizations worldwide.
@@ -94,7 +94,7 @@ export default function HeroSection() {
               <Button
                 variant="outline"
                 onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-white/[0.1] bg-transparent hover:bg-white/[0.03] hover:border-white/[0.2] text-white/40 hover:text-white/80 rounded-none px-10 h-13 text-[12px] font-light tracking-[0.15em] uppercase transition-all duration-500 py-4 group"
+                className="border-white/[0.1] bg-transparent hover:bg-white/[0.03] hover:border-white/[0.2] text-white/55 hover:text-white/80 rounded-none px-10 h-13 text-[12px] font-light tracking-[0.15em] uppercase transition-all duration-500 py-4 group"
               >
                 <Play className="mr-3 size-3 fill-current opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Watch Showreel
@@ -122,9 +122,9 @@ export default function HeroSection() {
                       <div className="flex items-end justify-between">
                         <div>
                           <div className="text-4xl font-extralight text-white/80 tracking-tight">{stat.value}</div>
-                          <div className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/25 font-medium">{stat.label}</div>
+                          <div className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/40 font-medium">{stat.label}</div>
                         </div>
-                        <div className="text-[10px] text-white/10 font-light font-[family-name:var(--font-space-mono)]">{stat.sub}</div>
+                        <div className="text-[10px] text-white/25 font-light font-[family-name:var(--font-space-mono)]">{stat.sub}</div>
                       </div>
                     </div>
                   ))}
@@ -138,8 +138,8 @@ export default function HeroSection() {
                   ].map((bar) => (
                     <div key={bar.label}>
                       <div className="flex justify-between mb-1.5">
-                        <span className="text-[9px] uppercase tracking-[0.2em] text-white/15 font-medium">{bar.label}</span>
-                        <span className="text-[9px] text-white/20 font-[family-name:var(--font-space-mono)]">{bar.value}%</span>
+                        <span className="text-[9px] uppercase tracking-[0.2em] text-white/35 font-medium">{bar.label}</span>
+                        <span className="text-[9px] text-white/40 font-[family-name:var(--font-space-mono)]">{bar.value}%</span>
                       </div>
                       <div className="h-[2px] bg-white/[0.04] rounded-full overflow-hidden">
                         <motion.div
@@ -168,7 +168,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 2 }}
           className="mt-16 lg:mt-24 border-t border-white/[0.04] pt-8"
         >
-          <p className="text-[9px] text-white/12 text-center mb-8 uppercase tracking-[0.5em] font-medium font-[family-name:var(--font-space-mono)]">
+          <p className="text-[9px] text-white/30 text-center mb-8 uppercase tracking-[0.5em] font-medium font-[family-name:var(--font-space-mono)]">
             Trusted by leading enterprises
           </p>
           <div className="relative overflow-hidden mask-fade-edges">
@@ -176,7 +176,7 @@ export default function HeroSection() {
               {clientLogos.map((logo, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 mx-12 text-white/[0.07] text-[11px] font-light tracking-[0.3em] whitespace-nowrap hover:text-white/20 transition-colors duration-700 uppercase"
+                  className="flex-shrink-0 mx-12 text-white/15 text-[11px] font-light tracking-[0.3em] whitespace-nowrap hover:text-white/35 transition-colors duration-700 uppercase"
                 >
                   {logo}
                 </div>
@@ -193,7 +193,7 @@ export default function HeroSection() {
         transition={{ delay: 2.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20"
       >
-        <span className="text-[9px] uppercase tracking-[0.3em] text-white/10 font-medium">Scroll</span>
+        <span className="text-[9px] uppercase tracking-[0.3em] text-white/25 font-medium">Scroll</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-white/20 to-transparent relative overflow-hidden">
           <motion.div
             animate={{ y: [0, 48] }}

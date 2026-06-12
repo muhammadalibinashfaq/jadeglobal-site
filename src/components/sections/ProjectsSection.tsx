@@ -89,7 +89,7 @@ export default function ProjectsSection() {
 
                   {/* Year + Company overlay */}
                   <div className="absolute bottom-6 left-6 lg:bottom-8 lg:left-8">
-                    <span className="text-[10px] font-[family-name:var(--font-space-mono)] tracking-[0.3em] text-white/30 uppercase">{project.year}</span>
+                    <span className="text-[10px] font-[family-name:var(--font-space-mono)] tracking-[0.3em] text-white/50 uppercase">{project.year}</span>
                   </div>
 
                   {/* Arrow */}
@@ -104,23 +104,23 @@ export default function ProjectsSection() {
                 <div className="p-8 sm:p-10 lg:p-14 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-4 mb-6">
-                      <span className="text-[11px] uppercase tracking-[0.25em] text-white/30 font-medium">{project.company}</span>
+                      <span className="text-[11px] uppercase tracking-[0.25em] text-white/50 font-medium">{project.company}</span>
                       <div className="h-[1px] w-8 bg-white/10" />
-                      <span className="text-[11px] uppercase tracking-[0.2em] text-white/15 font-[family-name:var(--font-space-mono)]">{project.metric}</span>
+                      <span className="text-[11px] uppercase tracking-[0.2em] text-white/40 font-[family-name:var(--font-space-mono)]">{project.metric}</span>
                     </div>
 
-                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extralight text-white/60 tracking-tight group-hover:text-white transition-colors duration-500 leading-tight mb-6">
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extralight text-white/75 tracking-tight group-hover:text-white transition-colors duration-500 leading-tight mb-6">
                       {project.title}
                     </h3>
 
-                    <p className="text-sm text-white/18 leading-[1.8] group-hover:text-white/35 transition-colors duration-500 font-light max-w-md">
+                    <p className="text-sm text-white/45 leading-[1.8] group-hover:text-white/65 transition-colors duration-500 font-light max-w-md">
                       {project.description}
                     </p>
                   </div>
 
                   <div className="flex gap-2 mt-8">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="text-[9px] uppercase tracking-[0.2em] text-white/10 border border-white/[0.04] px-3 py-1.5 font-medium">
+                      <span key={tag} className="text-[9px] uppercase tracking-[0.2em] text-white/30 border border-white/[0.04] px-3 py-1.5 font-medium">
                         {tag}
                       </span>
                     ))}
@@ -140,7 +140,7 @@ export default function ProjectsSection() {
         >
           <Button
             variant="outline"
-            className="border-white/[0.08] bg-transparent hover:bg-white/[0.02] hover:border-white/[0.15] text-white/30 hover:text-white/70 rounded-none px-10 h-12 text-[12px] tracking-[0.15em] uppercase font-light transition-all duration-500 group"
+            className="border-white/[0.08] bg-transparent hover:bg-white/[0.02] hover:border-white/[0.15] text-white/50 hover:text-white/80 rounded-none px-10 h-12 text-[12px] tracking-[0.15em] uppercase font-light transition-all duration-500 group"
           >
             View All Projects
             <ArrowUpRight className="ml-3 size-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300" />

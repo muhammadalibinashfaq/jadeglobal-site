@@ -91,7 +91,7 @@ export default function DemoSection() {
                     <div className="w-2 h-2 rounded-full bg-white/10" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.06]" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.03]" />
-                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/10">jade-ai-assistant</span>
+                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/30">jade-ai-assistant</span>
                   </div>
 
                   {/* Messages */}
@@ -108,7 +108,7 @@ export default function DemoSection() {
                           className={`max-w-[80%] px-5 py-3.5 text-sm leading-[1.7] font-light ${
                             msg.role === 'user'
                               ? 'bg-white/[0.04] text-white/60 border border-white/[0.04]'
-                              : 'bg-transparent text-white/25'
+                              : 'bg-transparent text-white/45'
                           }`}
                         >
                           {msg.message}
@@ -145,7 +145,7 @@ export default function DemoSection() {
                     <div className="w-2 h-2 rounded-full bg-white/10" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.06]" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.03]" />
-                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/10">live-support</span>
+                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/30">live-support</span>
                   </div>
                   <div className="p-8 min-h-[240px] flex items-center justify-center">
                     <div className="text-center">
@@ -157,7 +157,7 @@ export default function DemoSection() {
                         </div>
                       </div>
                       <p className="text-white/40 text-sm font-light mb-1">Connect with our team</p>
-                      <p className="text-[10px] text-white/10 font-[family-name:var(--font-space-mono)]">Mon-Fri, 9AM-6PM PST</p>
+                      <p className="text-[10px] text-white/30 font-[family-name:var(--font-space-mono)]">Mon-Fri, 9AM-6PM PST</p>
                     </div>
                   </div>
                   <div className="border-t border-white/[0.03] p-4">
@@ -189,9 +189,9 @@ export default function DemoSection() {
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                   className="group border border-white/[0.03] bg-[#060606] p-6 transition-all duration-700 hover:border-white/[0.08] hover:bg-[#080808] card-lift"
                 >
-                  <Icon className="size-4 text-white/10 mb-5 group-hover:text-white/30 transition-colors duration-500" />
-                  <h3 className="text-[11px] font-medium text-white/40 mb-2 tracking-[0.1em] uppercase">{feature.title}</h3>
-                  <p className="text-[10px] text-white/12 leading-[1.7] font-light">{feature.description}</p>
+                  <Icon className="size-4 text-white/25 mb-5 group-hover:text-white/45 transition-colors duration-500" />
+                  <h3 className="text-[11px] font-medium text-white/55 mb-2 tracking-[0.1em] uppercase">{feature.title}</h3>
+                  <p className="text-[10px] text-white/30 leading-[1.7] font-light">{feature.description}</p>
                 </motion.div>
               )
             })}
