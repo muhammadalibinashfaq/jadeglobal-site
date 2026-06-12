@@ -17,11 +17,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jade Global — Digital Transformation Partner",
+  title: "jadeglobal.site — Digital Transformation Partner",
   description:
     "Premier IT consulting, integration, and managed services. Cloud Transformation, ERP & CRM Modernization, Data & Analytics, AI & Intelligent Automation.",
   keywords: [
-    "Jade Global",
+    "jadeglobal.site",
     "Digital Transformation",
     "IT Consulting",
     "Cloud Migration",
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
     "AI Automation",
     "ERP Modernization",
   ],
-  authors: [{ name: "Jade Global" }],
+  authors: [{ name: "jadeglobal.site" }],
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Jade Global — Digital Transformation Partner",
+    title: "jadeglobal.site — Digital Transformation Partner",
     description:
       "Premier IT consulting, integration, and managed services for enterprise digital transformation.",
-    siteName: "Jade Global",
+    siteName: "jadeglobal.site",
     type: "website",
   },
 };

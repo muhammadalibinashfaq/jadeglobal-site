@@ -41,7 +41,7 @@ export default function WhyChooseSection() {
           <div className="flex items-center gap-5 mb-8">
             <div className="w-8 h-[1px] bg-gradient-to-r from-white/30 to-transparent" />
             <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/25 font-[family-name:var(--font-space-mono)]">
-              Why Jade Global
+              Why jadeglobal.site
             </span>
           </div>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight tracking-ultra-tight leading-[0.95]">

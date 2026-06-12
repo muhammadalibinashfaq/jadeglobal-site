@@ -15,7 +15,7 @@ const features = [
 ]
 
 const chatMessages = [
-  { role: 'bot' as const, message: 'Welcome to Jade Global. How can we accelerate your digital transformation today?' },
+  { role: 'bot' as const, message: 'Welcome to jadeglobal.site. How can we accelerate your digital transformation today?' },
 ]
 
 export default function DemoSection() {
@@ -91,7 +91,7 @@ export default function DemoSection() {
                     <div className="w-2 h-2 rounded-full bg-white/10" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.06]" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.03]" />
-                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/30">jade-ai-assistant</span>
+                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/30">jadeglobal.site-ai</span>
                   </div>
 
                   {/* Messages */}
@@ -145,7 +145,7 @@ export default function DemoSection() {
                     <div className="w-2 h-2 rounded-full bg-white/10" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.06]" />
                     <div className="w-2 h-2 rounded-full bg-white/[0.03]" />
-                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/30">live-support</span>
+                    <span className="ml-3 text-[9px] font-[family-name:var(--font-space-mono)] text-white/30">jadeglobal.site-support</span>
                   </div>
                   <div className="p-8 min-h-[240px] flex items-center justify-center">
                     <div className="text-center">

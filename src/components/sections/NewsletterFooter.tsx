@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Linkedin, Twitter, Youtube, Facebook } from 'lucide-react'
+import { ArrowRight, User, Mail, Phone, Building2, Globe, MessageSquare } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
@@ -22,16 +22,18 @@ const otherLinks = [
   { label: 'Terms & Conditions', href: '#' },
 ]
 
-const socialLinks = [
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
-]
-
 export default function NewsletterFooter() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const [formData, setFormData] = useState({
+    fullName: '',
+    emailAddress: '',
+    phone: '',
+    company: '',
+    website: '',
+    message: '',
+  })
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   const handleSubscribe = () => {
     if (email.trim() && email.includes('@')) {
@@ -39,6 +41,19 @@ export default function NewsletterFooter() {
       setEmail('')
       setTimeout(() => setSubscribed(false), 3000)
     }
+  }
+
+  const handleFormChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setFormSubmitted(true)
+    setTimeout(() => {
+      setFormSubmitted(false)
+      setFormData({ fullName: '', emailAddress: '', phone: '', company: '', website: '', message: '' })
+    }, 3000)
   }
 
   const handleNavClick = (href: string) => {
@@ -66,7 +81,7 @@ export default function NewsletterFooter() {
           >
             <div className="flex items-center justify-center gap-5 mb-8">
               <div className="w-8 h-[1px] bg-gradient-to-r from-transparent to-white/30" />
-              <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/25 font-[family-name:var(--font-space-mono)]">
+              <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-white/50 font-[family-name:var(--font-space-mono)]">
                 Newsletter
               </span>
               <div className="w-8 h-[1px] bg-gradient-to-l from-transparent to-white/30" />
@@ -87,7 +102,7 @@ export default function NewsletterFooter() {
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSubscribe()}
                 placeholder="Enter your email"
-                className="flex-1 bg-transparent border border-white/[0.06] border-r-0 text-white/70 placeholder:text-white/[0.06] rounded-none h-12 font-light text-sm focus:ring-0 focus:border-white/15 transition-colors duration-300"
+                className="flex-1 bg-transparent border border-white/[0.06] border-r-0 text-white/70 placeholder:text-white/20 rounded-none h-12 font-light text-sm focus:ring-0 focus:border-white/15 transition-colors duration-300"
               />
               <Button
                 onClick={handleSubscribe}
@@ -118,31 +133,122 @@ export default function NewsletterFooter() {
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-[14px] font-light tracking-[0.25em] uppercase text-white/60">
-                    Jade
+                    jadeglobal
                   </span>
                   <span className="text-[8px] font-medium tracking-[0.35em] uppercase text-white/35">
-                    Global
+                    .site
                   </span>
                 </div>
               </div>
               <p className="text-sm text-white/30 leading-[1.8] mb-10 font-light max-w-xs">
                 Your Trusted Partner for Digital Transformation. Premier IT consulting, integration, and managed services since 2003.
               </p>
-              <div className="flex gap-2">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      aria-label={social.label}
-                      className="w-9 h-9 border border-white/[0.04] flex items-center justify-center text-white/25 hover:text-white/50 hover:border-white/[0.1] transition-all duration-500"
-                    >
-                      <Icon className="size-3.5" />
-                    </a>
-                  )
-                })}
-              </div>
+
+              {/* Contact Form replacing social icons */}
+              <motion.form
+                onSubmit={handleFormSubmit}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-4"
+              >
+                {/* Full Name */}
+                <div>
+                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Full Name</label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                    <Input
+                      value={formData.fullName}
+                      onChange={(e) => handleFormChange('fullName', e.target.value)}
+                      placeholder="John Doe"
+                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Email Address */}
+                <div>
+                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Email Address</label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                    <Input
+                      type="email"
+                      value={formData.emailAddress}
+                      onChange={(e) => handleFormChange('emailAddress', e.target.value)}
+                      placeholder="john@example.com"
+                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Phone Number */}
+                <div>
+                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Phone Number</label>
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                    <Input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleFormChange('phone', e.target.value)}
+                      placeholder="+1 (555) 123-4567"
+                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Company Name */}
+                <div>
+                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Company Name</label>
+                  <div className="relative">
+                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                    <Input
+                      value={formData.company}
+                      onChange={(e) => handleFormChange('company', e.target.value)}
+                      placeholder="Antrosys"
+                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Website URL */}
+                <div>
+                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Website URL</label>
+                  <div className="relative">
+                    <Globe className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+                    <Input
+                      type="url"
+                      value={formData.website}
+                      onChange={(e) => handleFormChange('website', e.target.value)}
+                      placeholder="https://example.com"
+                      className="bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg h-11 font-light text-sm pl-10 focus:ring-0 focus:border-white/15 transition-colors duration-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-[10px] font-medium text-white/50 uppercase tracking-[0.2em] mb-2">Message</label>
+                  <div className="relative">
+                    <MessageSquare className="absolute left-3 top-3 size-4 text-white/25" />
+                    <textarea
+                      value={formData.message}
+                      onChange={(e) => handleFormChange('message', e.target.value)}
+                      placeholder="I need an amazing Web / UI/UX Design / Brand identity..."
+                      rows={4}
+                      className="w-full bg-white/[0.04] border border-white/[0.06] text-white/80 placeholder:text-white/20 rounded-lg font-light text-sm pl-10 pr-4 py-3 focus:ring-0 focus:border-white/15 transition-colors duration-300 resize-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  className="w-full bg-white text-black font-semibold rounded-lg h-12 text-[13px] tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-500 mt-2"
+                >
+                  {formSubmitted ? 'Message Sent!' : 'Submit'}
+                </Button>
+              </motion.form>
             </div>
 
             {/* Quick Links */}
@@ -184,12 +290,12 @@ export default function NewsletterFooter() {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Contact Info */}
             <div>
               <h4 className="text-[9px] font-medium text-white/40 mb-6 uppercase tracking-[0.3em]">
                 Contact
               </h4>
-              <div className="space-y-4 text-sm text-white/10 font-light leading-[1.7]">
+              <div className="space-y-4 text-sm text-white/30 font-light leading-[1.7]">
                 <p>
                   1731 Technology Drive,
                   <br />
@@ -198,13 +304,24 @@ export default function NewsletterFooter() {
                   CA 95110
                 </p>
                 <p>
-                  <a href="tel:+18008997200" className="hover:text-white/30 transition-colors duration-300">
+                  <a href="tel:+18008997200" className="hover:text-white/55 transition-colors duration-300">
                     +1 800-899-7200
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:info@jadeglobal.site" className="hover:text-white/30 transition-colors duration-300">
+                  <a href="mailto:info@jadeglobal.site" className="hover:text-white/55 transition-colors duration-300">
                     info@jadeglobal.site
+                  </a>
+                </p>
+                <p className="pt-4">
+                  <a
+                    href="https://Cal.com/Antrosys"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white text-black font-semibold rounded-lg px-5 py-3 text-[11px] tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-500"
+                  >
+                    Book a Meeting
+                    <ArrowRight className="size-3" />
                   </a>
                 </p>
               </div>
@@ -217,7 +334,7 @@ export default function NewsletterFooter() {
       <div className="border-t border-white/[0.03]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-[9px] text-white/20 font-light tracking-[0.15em] font-[family-name:var(--font-space-mono)]">
-            &copy; 2026 JADE GLOBAL. ALL RIGHTS RESERVED.
+            &copy; 2026 JADEGLOBAL.SITE. ALL RIGHTS RESERVED.
           </p>
           <p className="text-[9px] text-white/20 font-light tracking-[0.15em]">
             San Jose &middot; Philadelphia &middot; Dallas &middot; Pune &middot; London

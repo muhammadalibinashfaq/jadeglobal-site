@@ -81,12 +81,14 @@ export default function Navbar() {
 
             {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-5">
-              <Button
-                onClick={() => handleNavClick('#contact')}
-                className="hidden sm:flex btn-shine bg-white text-black font-medium text-[12px] tracking-[0.1em] uppercase rounded-none px-7 h-10 hover:bg-white/90 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]"
+              <a
+                href="https://Cal.com/Antrosys"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex btn-shine bg-white text-black font-medium text-[12px] tracking-[0.1em] uppercase rounded-none px-7 h-10 hover:bg-white/90 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] items-center"
               >
-                Book a Call
-              </Button>
+                Book a Meeting
+              </a>
 
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -132,12 +134,14 @@ export default function Navbar() {
                 transition={{ duration: 0.4, delay: 0.5 }}
                 className="mt-10"
               >
-                <Button
-                  onClick={() => handleNavClick('#contact')}
-                  className="btn-shine bg-white text-black font-medium text-sm tracking-wide rounded-none px-10 h-12 hover:bg-white/90 transition-all duration-300"
+                <a
+                  href="https://Cal.com/Antrosys"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-shine bg-white text-black font-medium text-sm tracking-wide rounded-none px-10 h-12 hover:bg-white/90 transition-all duration-300 inline-flex items-center"
                 >
-                  Book a Call
-                </Button>
+                  Book a Meeting
+                </a>
               </motion.div>
             </div>
           </motion.div>

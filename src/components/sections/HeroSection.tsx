@@ -91,14 +91,15 @@ export default function HeroSection() {
                 Explore Services
                 <ArrowDown className="ml-3 size-3.5 transition-transform group-hover:translate-y-1 duration-300" />
               </Button>
-              <Button
-                variant="outline"
-                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-white/[0.1] bg-transparent hover:bg-white/[0.03] hover:border-white/[0.2] text-white/55 hover:text-white/80 rounded-none px-10 h-13 text-[12px] font-light tracking-[0.15em] uppercase transition-all duration-500 py-4 group"
+              <a
+                href="https://Cal.com/Antrosys"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-white/[0.1] bg-transparent hover:bg-white/[0.03] hover:border-white/[0.2] text-white/55 hover:text-white/80 rounded-none px-10 h-13 text-[12px] font-light tracking-[0.15em] uppercase transition-all duration-500 py-4 group inline-flex items-center"
               >
                 <Play className="mr-3 size-3 fill-current opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Watch Showreel
-              </Button>
+                Book a Meeting
+              </a>
             </motion.div>
           </div>
 

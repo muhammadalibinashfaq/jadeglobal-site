@@ -103,10 +103,15 @@ export default function MetricsSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <Button className="btn-shine bg-white text-black font-medium text-[12px] tracking-[0.15em] uppercase rounded-none px-10 h-13 hover:bg-white/90 transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,255,255,0.06)] group py-4">
-            Request Demo
+          <a
+            href="https://Cal.com/Antrosys"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-shine bg-white text-black font-medium text-[12px] tracking-[0.15em] uppercase rounded-none px-10 h-13 hover:bg-white/90 transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,255,255,0.06)] group py-4 inline-flex items-center"
+          >
+            Book a Meeting
             <ArrowRight className="ml-3 size-3.5 transition-transform group-hover:translate-x-1 duration-300" />
-          </Button>
+          </a>
         </motion.div>
       </div>
     </section>
